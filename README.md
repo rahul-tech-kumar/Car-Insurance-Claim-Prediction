@@ -43,6 +43,10 @@ train.csv ──► Preprocessing ──► ML Models ──► MLflow Tracking
 | Streamlit UI             | Prediction + Model Monitoring dashboard   |
 | Model Comparison         | ROC-AUC / F1 / Accuracy tracking          |
 
+## 🌐 Live Deployment
+🚀 **Streamlit Cloud App:**  
+https://car-insurance-claim-prediction-hxky7nm5tvmt2s4ngxpjxa.streamlit.app/
+
 # Screenshots
 ## Model monitor
 <img width="1920" height="1080" alt="Screenshot (185)" src="https://github.com/user-attachments/assets/0cc23c34-e87b-4cf3-85d0-271e0efad2b6" />
