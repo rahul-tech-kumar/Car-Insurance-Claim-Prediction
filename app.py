@@ -22,35 +22,58 @@ def clean_num(x):
 
 st.sidebar.title("🚗 Car Insurance Claim")
 st.sidebar.markdown("---")
-page = st.sidebar.radio("Go to", ["Home", "Prediction", "Data Explorer", "Model Monitor", "Admin"])
+page = st.sidebar.radio(
+    "Go to",
+    [
+        "🏠 Home",
+        "🔍 Prediction",
+        "📊 Data Explorer",
+        "🛡️ Model Monitor"
+    ]
+)
 
-if page == "Home":
+if page == "🏠 Home":
 
-    st.write("""
-    ### About This App
-    This AI system predicts the probability that a customer will file a car insurance claim.
+    st.markdown("""
 
-    **It uses a production-grade machine learning pipeline trained on 300,000+ policy records.**
+    ### 🚗 About the Application
+    This intelligent system predicts the **probability that a customer will file a car insurance claim**, enabling insurance companies to proactively manage risk, detect potential fraud, and minimize financial losses.
 
-    ### Features Used
-    - Vehicle specs  
-    - Safety features  
-    - Policy tenure  
-    - Demographics  
-    - Location cluster  
+    The model is built using a **production-grade machine learning pipeline trained on 300,000+ real insurance policy records**, ensuring high reliability and scalability.
 
-    ### Output
-    - Claim probability  
-    - Risk classification  
-    - Helps insurance companies prevent fraud and reduce losses.
+    ---
+
+    ### 🔍 Key Features Used for Prediction
+    - Vehicle specifications  
+    - Safety and security features  
+    - Policy tenure and history  
+    - Customer demographics  
+    - Location & area risk clusters  
+
+    ---
+
+    ### 📊 What You Get
+    - **Claim probability score**
+    - **Risk classification (Low / Medium / High)**
+    - Actionable insights for underwriting and fraud prevention
+
+    ---
+
+    ### 🏢 Who Can Use This?
+    - Insurance companies  
+    - Risk analysts  
+    - Underwriting teams  
+    - Fraud detection units  
+
     """)
 
-    st.info("👈 Go to Predict page from sidebar to check risk")
+    st.info("👈 Navigate to the **Predict** page from the sidebar to evaluate customer risk.")
+
 
 
 # -------------------- PREDICTION --------------------
 
-if page== "Prediction":
+if page== "🔍 Prediction":
     
     # -------------------- INPUT UI --------------------
     
@@ -140,7 +163,7 @@ if page== "Prediction":
 # -------------------Data Explorer --------------------------------------
 import matplotlib.pyplot as plt
 
-if page == "Data Explorer":
+if page == "📊 Data Explorer":
     st.title("📊 Dataset Explorer")
 
     df = pd.read_csv("train.csv")
@@ -190,7 +213,7 @@ from mlflow.tracking import MlflowClient
 import plotly.express as px
 
 
-if page == "Model Monitor":
+if page == "🛡️ Model Monitor":
 
     st.title("📊 Model Monitor")
 
@@ -248,3 +271,21 @@ if page == "Model Monitor":
 
 
             
+
+# ---------- Sidebar Footer ----------
+st.sidebar.markdown("<br><br>", unsafe_allow_html=True)
+
+st.sidebar.markdown("""
+<hr style="margin-top:40px;margin-bottom:10px">
+<div style="text-align:center; font-size:13px; color:gray;">
+
+🚗 <b>ClaimGuard AI</b><br>
+Smart Insurance Risk Platform<br><br>
+
+Developed by <b>Rahul Kumar</b><br>
+B.Tech IT, IIEST Shibpur<br><br>
+
+© 2025 All Rights Reserved
+
+</div>
+""", unsafe_allow_html=True)
